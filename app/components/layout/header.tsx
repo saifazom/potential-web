@@ -11,7 +11,7 @@ export default function Header() {
           <ul className="flex">
             <li>
               <Link to="/" className="hover:text-primary">
-                Home
+                Home page
               </Link>
             </li>
             <li>
