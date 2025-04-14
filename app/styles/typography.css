@@ -1,3 +1,2 @@
-.u-btn-blue {
-  background-color: var(--theme-neonBlue);
+@layer base {
 }

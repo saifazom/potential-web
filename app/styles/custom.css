@@ -1,0 +1,68 @@
+/* -----------------
+  Custom Variable 
+-------------------- */
+@theme {
+  /* Text & BG Colors */
+  --color-themeViolet: #624dff;
+  --color-themeLightGray: #e9ecfb;
+
+  /* Font Families */
+  --font-onest: Onest, sans-serif;
+  --font-manrope: Manrope, sans-serif;
+}
+
+/* ------------------
+  Custom Components 
+--------------------- */
+@layer components {
+  .u-button-violate {
+    @apply bg-themeViolet text-white px-[29px] py-[22px] rounded-full font-[onest] font-normal text-[min(40vw,20px)] leading-tight flex-items-center gap-3 cursor-pointer transition duration-300 hover:after:translate-x-1.5;
+  }
+  .u-button-violate::after {
+    @apply w-[28px] h-[18px] content-[''] after:content-[''] bg-[url(../assets/img/arrow-up-right-white.svg)] bg-contain bg-[center_right] bg-no-repeat inline-block transition-all duration-300;
+  }
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+@utility flex-items-center {
+  @apply flex items-center;
+}
+
+/* ------------------
+  Custom CSS 
+--------------------- */
+body {
+  @apply bg-themeLightGray;
+}
+nav ul {
+  @apply flex-center gap-x-1;
+}
+nav ul li {
+  @apply [&:has(ul)]:bg-[url(../assets/img/arrow-down-1.svg)] px-6 bg-no-repeat bg-size-[18px] bg-position-[100%_3px] leading-tight hover:[&>.u-dropdown]:top-full hover:[&>.u-dropdown]:opacity-100 hover:[&>.u-dropdown]:visible hover:[&>.u-dropdown]:z-10;
+}
+nav ul li:has(ul):nth-of-type(2) {
+  @apply bg-[url(../assets/img/arrow-down-2.svg)] bg-size-[15px];
+}
+nav ul li a {
+  @apply hover:text-themeViolet font-normal transition duration-300 text-lg;
+}
+.u-dropdown {
+  @apply absolute left-0 top-32 z-[-1] invisible bg-white text-black text-left p-8 w-[1248px] opacity-0 transition-all duration-300 flex flex-1/2;
+}
+.u-dropdown ul {
+  @apply w-1/2 block;
+}
+.u-dropdown ul li {
+  @apply p-0 border-b-[1px] border-[#d5d7da] last-of-type:border-b-0;
+}
+.u-dropdown ul:first-child li {
+  @apply border-r-[1px];
+}
+.u-dropdown ul li a {
+  @apply text-2xl leading-tight p-6 flex-items-center font-[manrope] font-medium bg-[url(../assets/img/arrow-45deg.svg)] bg-size-[28px] bg-[position:calc(100%-54px)_31px] bg-no-repeat hover:bg-[position:calc(100%-48px)_31px] transition-all duration-300;
+}
+.u-dropdown ul li span {
+  @apply text-[20px] text-[#A4A7AE] pr-4 mt-[-0.5px];
+}
