@@ -1,6 +1,7 @@
 import type { Route } from "../pages/+types/home";
-import { ClientsLogoCarousel } from "~/components/clientsLogoCarousel";
-import { HeadlineCarousel } from "~/components/HeadlineCarousel";
+import React, { Suspense, lazy } from "react";
+const HeadlineCaro = lazy(() => import("~/components/HeadlineCarousel"));
+const ClientsLogo = lazy(() => import("~/components/clientsLogoMarquee"));
 import { TestimonialsCarousel } from "~/components/TestimonialsCarousel";
 import { AchievementCounter } from "~/components/AchievementCounter";
 import {
@@ -11,18 +12,6 @@ import {
   heroIcon1,
   heroIcon2,
   accourdionImg1,
-  cerouselIcon1,
-  cerouselIcon2,
-  clientLogo,
-  clientLogo2,
-  clientLogo3,
-  clientLogo4,
-  clientLogo5,
-  clientLogo6,
-  clientLogo7,
-  clientLogo8,
-  clientLogo9,
-  clientLogo10,
 } from "~/utils/ImageComponent";
 import {
   Accordion,
@@ -30,29 +19,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
-
-// Cleant Logos Array
-const clientLogos = [
-  clientLogo,
-  clientLogo2,
-  clientLogo3,
-  clientLogo4,
-  clientLogo5,
-  clientLogo6,
-  clientLogo7,
-  clientLogo8,
-  clientLogo9,
-  clientLogo10,
-];
-const headlineTexts = [
-  "together",
-  "let's build",
-  "together",
-  "let's build",
-  "together",
-  "let's build",
-];
-const loopSafeItems = [...headlineTexts, ...headlineTexts];
 const accordionData = [
   {
     title: "UI/UX Design",
@@ -268,9 +234,10 @@ export default function Home() {
           <h2 className="c-clients-logo__title">
             <strong>Over 100+</strong> companies trust us
           </h2>
-          <div className="c-clients-logo__carousel">
-            <ClientsLogoCarousel logos={clientLogos} />
-          </div>
+
+          <Suspense fallback={<div className="flex-center">Loading...</div>}>
+            <ClientsLogo />
+          </Suspense>
         </div>
       </section>
       {/* <--! End CLient Logo Section --> */}
@@ -325,7 +292,9 @@ export default function Home() {
         className="o-section o-section--headline-carousel"
       >
         <div className="c-headline-carousel">
-          <HeadlineCarousel texts={loopSafeItems} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <HeadlineCaro />
+          </Suspense>
         </div>
       </section>
       {/* <--! End Headline Slider Section --> */}
@@ -677,10 +646,13 @@ export default function Home() {
         className="o-section o-section--headline-carousel2"
       >
         <div className="c-headline-carousel c-headline-carousel--2">
-          <HeadlineCarousel texts={loopSafeItems} />
+          <Suspense fallback={<div className="flex-center">Loading...</div>}>
+            <HeadlineCaro />
+          </Suspense>
         </div>
       </section>
       {/* <--! End Testimonials Section --> */}
+
       <section id="testimonials" className="o-section o-section--testimonials">
         <div className="c-headline-carousel">
           <div className="container mx-auto">
@@ -693,7 +665,7 @@ export default function Home() {
             {/* /-- Header -- */}
 
             <div className="c-testimonials__wrap">
-              <TestimonialsCarousel texts={headlineTexts} />
+              {/* <TestimonialsCarousel texts={} /> */}
             </div>
           </div>
         </div>
