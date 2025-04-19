@@ -6,7 +6,7 @@ export default function BaseLayout() {
   return (
     <>
       <Header />
-      <main className="container mx-auto flex min-h-screen">
+      <main>
         <Outlet />
       </main>
       <Footer />

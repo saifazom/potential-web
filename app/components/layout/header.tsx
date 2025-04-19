@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import siteLogo from "../../assets/img/site-logo.svg";
+import siteLogo from "~/assets/img/site-logo.svg";
 
 export default function Header() {
   return (
-    <header>
+    <header id="header" className="o-section o-section--header">
       <div className="container mx-auto relative py-6 mt-4 ">
-        <div className="flex-items-center justify-between px-4">
+        <div className="flex-items-center justify-between">
           <Link to="/">
             <img src={siteLogo} alt="Site Logo" />
           </Link>
@@ -164,7 +164,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <button className="u-button-violate">Let's Talk</button>
+          <button className="u-button--violate">Let's Talk</button>
         </div>
       </div>
     </header>
