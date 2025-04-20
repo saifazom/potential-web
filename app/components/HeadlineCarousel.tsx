@@ -36,8 +36,12 @@ import Marquee from "react-fast-marquee";
 const headlineTexts = ["together", "let's build"];
 export default function HeadlineCaro() {
   return (
-    <Marquee speed={80} pauseOnHover gradient={false}>
+    <Marquee speed={60} pauseOnHover gradient={false}>
       <div className="c-headline-carousel__wrap">
+        <div className="c-headline-carousel__item">{headlineTexts[0]}</div>
+        <div className="c-headline-carousel__item">{headlineTexts[1]}</div>
+        <div className="c-headline-carousel__item">{headlineTexts[0]}</div>
+        <div className="c-headline-carousel__item">{headlineTexts[1]}</div>
         <div className="c-headline-carousel__item">{headlineTexts[0]}</div>
         <div className="c-headline-carousel__item">{headlineTexts[1]}</div>
         <div className="c-headline-carousel__item">{headlineTexts[0]}</div>

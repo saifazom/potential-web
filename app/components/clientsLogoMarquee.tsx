@@ -32,8 +32,29 @@ import {
 
 export default function ClientsLogo() {
   return (
-    <Marquee speed={80} pauseOnHover gradient={false}>
+    <Marquee speed={70} pauseOnHover gradient={false}>
       <div className="c-clients-logo__carousel">
+        <div className="c-clients-logo__item">
+          <img src={clientLogo} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo2} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo3} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo4} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo5} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo6} alt=" " />
+        </div>
+        <div className="c-clients-logo__item">
+          <img src={clientLogo7} alt=" " />
+        </div>
         <div className="c-clients-logo__item">
           <img src={clientLogo} alt=" " />
         </div>
