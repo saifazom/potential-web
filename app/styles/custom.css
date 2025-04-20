@@ -404,7 +404,10 @@ nav ul li a {
   @apply flex-[29%] overflow-hidden absolute top-14 right-0;
 }
 .c-accordion__img img {
-  @apply max-h-90;
+  @apply max-h-90 opacity-0 transition-all duration-600;
+}
+.c-accordion__item[data-state="open"] .c-accordion__img img {
+  @apply opacity-100;
 }
 .c-accordion__btn {
   @apply mt-12;
