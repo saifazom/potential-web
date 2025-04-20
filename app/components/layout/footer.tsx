@@ -19,7 +19,9 @@ export default function Footer() {
                 </div>
                 <h3 className="c-footer-location__title">HQ - South Korea</h3>
                 <p>
-                  WEWORK 4F, 147, Yanghwa-ro Mapo-guSeoul, Korea
+                  WEWORK 4F, 147, <br />
+                  Yanghwa-ro Mapo-guSeoul, Korea
+                  <br />
                   <Link to="tel:+8210-2706-1463">+82 10-2706-1463</Link>
                 </p>
                 <Link
@@ -33,10 +35,13 @@ export default function Footer() {
                 <div className="c-footer-location__icon">
                   <img src={locationMap2} alt="" />
                 </div>
-                <h3 className="c-footer-location__title">HQ - South Korea</h3>
+                <h3 className="c-footer-location__title">USA</h3>
                 <p>
-                  WEWORK 4F, 147, Yanghwa-ro Mapo-guSeoul, Korea
-                  <Link to="tel:+8210-2706-1463">+82 10-2706-1463</Link>
+                  131 Continental Dr, Suite 305
+                  <br />
+                  Newark, DE 19713, USA
+                  <br />
+                  <Link to="tel:+1 (213) 214 2664">+1 (213) 214 2664</Link>
                 </p>
                 <Link
                   className="c-footer-location__link"
@@ -49,10 +54,13 @@ export default function Footer() {
                 <div className="c-footer-location__icon">
                   <img src={locationMap3} alt="" />
                 </div>
-                <h3 className="c-footer-location__title">HQ - South Korea</h3>
+                <h3 className="c-footer-location__title">Bangladesh</h3>
                 <p>
-                  WEWORK 4F, 147, Yanghwa-ro Mapo-guSeoul, Korea{" "}
-                  <Link to="tel:+8210-2706-1463">+82 10-2706-1463</Link>
+                  dhanmondi, apartment
+                  <br />
+                  #b-c, property palace, 1205
+                  <br />
+                  <Link to="tel:+880-017 10956850">+880-017 10956850</Link>
                 </p>
                 <Link
                   className="c-footer-location__link"

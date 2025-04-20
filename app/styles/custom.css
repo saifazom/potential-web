@@ -526,7 +526,7 @@ button.c-testimonials__prev-btn {
   @apply text-[32px] leading-14 font-normal font-manrope pb-5;
 }
 .c-cta__button {
-  @apply w-[230px] h-[230px] rounded-full bg-white block flex-none border-2 border-white relative overflow-hidden box-border transition-all duration-300;
+  @apply w-[230px] h-[230px] rounded-full bg-white block flex-none border-20 border-double border-white relative overflow-hidden box-border transition-all duration-400 hover:border-themeViolet;
 }
 .c-cta__button::after {
   @apply content-[''] bg-[url(../assets/img/arrow-right-large.svg)] bg-no-repeat bg-center bg-contain w-[126px] h-[101px] absolute left-1/2 top-1/2 -translate-1/2;
@@ -591,7 +591,7 @@ button.c-testimonials__prev-btn {
   @apply text-[32px] leading-9 font-bold font-onest text-white mb-4;
 }
 .c-footer-location__link {
-  @apply text-[22px] leading-tight font-medium font-onest text-white mt-[22px] inline-block;
+  @apply text-[22px] leading-tight font-medium font-onest text-white mt-[22px] inline-block transition-all duration-300 hover:text-[#A4A7AE];
 }
 .c-footer-bottom {
   @apply py-20 text-[#A4A7AE] flex gap-[155px] border-b-[1.5px] border-[#252B37];
