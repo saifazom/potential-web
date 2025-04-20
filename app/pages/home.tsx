@@ -1,6 +1,8 @@
 import type { Route } from "../pages/+types/home";
+import { Link } from "react-router";
 import React, { Suspense, lazy } from "react";
 const HeadlineCaro = lazy(() => import("~/components/HeadlineCarousel"));
+const HeadlineCaro2 = lazy(() => import("~/components/HeadlineCarousel2"));
 const ClientsLogo = lazy(() => import("~/components/clientsLogoMarquee"));
 import { TestimonialsCarousel } from "~/components/TestimonialsCarousel";
 import { AchievementCounter } from "~/components/AchievementCounter";
@@ -12,6 +14,9 @@ import {
   heroIcon1,
   heroIcon2,
   accourdionImg1,
+  storyImg1,
+  storyImg2,
+  storyImg3,
 } from "~/utils/ImageComponent";
 import {
   Accordion,
@@ -55,8 +60,8 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="o-section o-section--hero">
-        <div className="container mx-auto">
-          <div className="c-hero">
+        <div className="c-hero">
+          <div className="container mx-auto">
             <div className="c-hero__content">
               <div className="c-hero__text-box">
                 <h1 className="c-hero__title">
@@ -300,8 +305,8 @@ export default function Home() {
       {/* <--! End Headline Slider Section --> */}
 
       <section id="case-studies" className="o-section o-section--case-studies">
-        <div className="container mx-auto">
-          <div className="c-case-studies">
+        <div className="c-case-studies">
+          <div className="container mx-auto">
             <div className="c-case-studies__header">
               <h3 className="u-small-title">our Case Studies</h3>
               <div className="u-title">
@@ -581,9 +586,9 @@ export default function Home() {
             {/* /-- Video Row -- */}
 
             <div className="text-center">
-              <a className="c-case-study__button" href="#">
+              <Link to="/" className="c-case-study__button">
                 <span>View all cases</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -596,7 +601,7 @@ export default function Home() {
       >
         <div className="c-expertise-area">
           <div className="container mx-auto">
-            <div className="c-contact__header">
+            <div className="c-expertise-area__header">
               <h3 className="u-small-title">Our expertise areas</h3>
               <h2 className="u-title">
                 Tailored Software, Built by Experts to Drive 10x Growth.
@@ -624,9 +629,9 @@ export default function Home() {
                           <li>{item.content.text3}</li>
                         </ul>
 
-                        <a className="c-accordion__btn u-button" href="#">
+                        <Link to="/" className="c-accordion__btn u-button">
                           Learn More
-                        </a>
+                        </Link>
                       </div>
                       <div className="c-accordion__img">
                         <img src={accourdionImg1} alt="Accordion Img 1" />
@@ -651,10 +656,10 @@ export default function Home() {
           </Suspense>
         </div>
       </section>
-      {/* <--! End Testimonials Section --> */}
+      {/* <--! End Headline Carosel Section2 --> */}
 
       <section id="testimonials" className="o-section o-section--testimonials">
-        <div className="c-headline-carousel">
+        <div className="c-testimonials">
           <div className="container mx-auto">
             <div className="c-testimonials__header">
               <h3 className="u-small-title">our Clients love about us</h3>
@@ -665,12 +670,73 @@ export default function Home() {
             {/* /-- Header -- */}
 
             <div className="c-testimonials__wrap">
-              {/* <TestimonialsCarousel texts={} /> */}
+              <TestimonialsCarousel />
             </div>
           </div>
         </div>
       </section>
       {/* <--! End Testimonials Section --> */}
+
+      <section id="our-story" className="o-section o-section--our-story">
+        <div className="c-our-story">
+          <div className="container mx-auto">
+            <div className="c-headline-carousel__wrap">
+              <div className="c-our-story__header">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <HeadlineCaro2 />
+                </Suspense>
+              </div>
+            </div>
+            {/* /-- Header -- */}
+
+            <div className="c-our-story__wrap">
+              <div className="c-our-story__col">
+                <div className="c-our-story__img">
+                  <img src={storyImg1} alt="Story Img 1" />
+                </div>
+                <div className="c-our-story__text">
+                  <h4>The Future of Digital Design: Trends to Watch in 2024</h4>
+                </div>
+              </div>
+              <div className="c-our-story__col">
+                <div className="c-our-story__img">
+                  <img src={storyImg2} alt="Story Img 2" />
+                </div>
+                <div className="c-our-story__text">
+                  <h4>Our Story: A Journey of Innovation and Growth.</h4>
+                </div>
+              </div>
+              <div className="c-our-story__col">
+                <div className="c-our-story__img">
+                  <img src={storyImg3} alt="Story Img 3" />
+                </div>
+                <div className="c-our-story__text">
+                  <h4>The Future of Digital Design: Trends to Watch in 2024</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <--! End Our Story Section --> */}
+
+      <section id="cta" className="o-section o-section--cta">
+        <div className="c-cta">
+          <div className="container mx-auto">
+            <div className="c-cta__wrap">
+              <div className="c-cta__text">
+                <h2 className="c-cta__title">Let’s Chat</h2>
+                <p>
+                  Connect with us to launch high-impact software solutions
+                  quickly and efficiently.
+                </p>
+              </div>
+              <Link to="#" className="c-cta__button"></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <--! End CTA Section --> */}
     </>
   );
 }
