@@ -17,6 +17,10 @@
   Custom Components 
 --------------------- */
 @layer components {
+  .fadeInUp {
+    @apply opacity-0;
+  }
+
   .u-button {
     @apply rounded-full bg-themeLemYellow text-black text-2xl leading-tight font-medium font-onest px-14 py-6 border-[1px] border-themeLemYellow hover:bg-black hover:text-themeLemYellow inline-block transition-all duration-300;
   }
@@ -133,10 +137,10 @@ nav ul li a {
   @apply pl-6 text-2xl leading-[34px] font-manrope font-normal text-[#535862];
 }
 .c-cp-box__text strong {
-  @apply font-normal text-black relative;
+  @apply font-normal text-black relative overflow-hidden;
 }
 .c-cp-box__text strong::after {
-  @apply content-[''] w-[72px] h-3.5 bg-[url(../assets/img/wave-line.svg)] bg-contain bg-no-repeat bg-center absolute bottom-[-12px] left-[50%] translate-x-[-50%] block;
+  @apply content-[''] w-[73px] h-3.5 bg-[url(../assets/img/wave-line.gif)] bg-contain bg-no-repeat bg-center absolute bottom-[-10px] left-[50%] translate-x-[-50%] block;
 }
 .c-hero__video {
   @apply relative overflow-hidden z-0 h-[290px] flex-[34%] -ml-52;

@@ -67,7 +67,7 @@ export const TestimonialsCarousel = () => {
             Autoplay({
               playOnInit: true,
               delay: 3000,
-              stopOnInteraction: true,
+              stopOnInteraction: false,
               stopOnMouseEnter: true,
             }),
           ]}

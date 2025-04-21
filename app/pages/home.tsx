@@ -6,6 +6,7 @@ const HeadlineCaro2 = lazy(() => import("~/components/HeadlineCarousel2"));
 const ClientsLogo = lazy(() => import("~/components/clientsLogoMarquee"));
 import { TestimonialsCarousel } from "~/components/TestimonialsCarousel";
 import { AchievementCounter } from "~/components/AchievementCounter";
+import PageWithAnimations, { AnimatedWave } from "~/components/gsapAnim";
 import {
   clientImg1,
   clientImg2,
@@ -59,16 +60,20 @@ const accordionData = [
 export default function Home() {
   return (
     <>
+      <div className="hidden">
+        <PageWithAnimations />
+      </div>
+
       <section id="hero" className="o-section o-section--hero">
         <div className="c-hero">
           <div className="container mx-auto">
             <div className="c-hero__content">
               <div className="c-hero__text-box">
-                <h1 className="c-hero__title">
+                <h1 className="c-hero__title fadeInUp">
                   Build and Scale Custom Software 3x Faster.
                 </h1>
 
-                <div className="c-cp-box">
+                <div className="c-cp-box fadeInUp">
                   <div className="c-cp-box__images">
                     <div className="c-cp-box__img">
                       <img src={clientImg1} alt="Client Img1" />
@@ -88,7 +93,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="c-hero__video">
+              <div className="c-hero__video fadeInUp">
                 <div className="c-hero__video-overlay">
                   <video
                     autoPlay={true}
@@ -104,20 +109,22 @@ export default function Home() {
             </div>
             <div className="c-hero-footer">
               <div className="c-hero-footer__col">
-                <div className="c-hero-footer__top">
+                <div className="c-hero-footer__top fadeInUp">
                   <div className="c-hero-footer__icon">
                     <img src={heroIcon1} alt="Hero Icon1" />
                     HQ: South Korea
                   </div>
-                  <div className="">Servicing Earth</div>
+                  <div>Servicing Earth</div>
                 </div>
-                <p>
-                  Potential is a global Design and Development Agency. Helping
-                  Brands redefine experiences and empower business growth.
-                </p>
+                <div className="fadeInUp">
+                  <p>
+                    Potential is a global Design and Development Agency. Helping
+                    Brands redefine experiences and empower business growth.
+                  </p>
+                </div>
               </div>
               <div className="c-hero-footer__col">
-                <div className="c-hero-footer__title">
+                <div className="c-hero-footer__title fadeInUp">
                   <img src={heroIcon2} alt="Hero Icon 2" />
                   <h3>
                     Your company is ready for big moves and we are here for it.
