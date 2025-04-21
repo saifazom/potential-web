@@ -78,9 +78,9 @@ export const TestimonialsCarousel = () => {
               <CarouselItem className="c-testimonials__item" key={item.id}>
                 <div className="c-testimonials__body">
                   <div className="c-testimonials__text">
-                    <p>{item.text}</p>
+                    <p className="fadeInUp">{item.text}</p>
 
-                    <div className="c-testimonials__footer c-testimonial-author">
+                    <div className="c-testimonials__footer c-testimonial-author fadeInUp">
                       <div className="c-testimonial-author__img">
                         <img src={item.img} alt={`Author ${item.id}`} />
                       </div>
@@ -92,7 +92,7 @@ export const TestimonialsCarousel = () => {
                   </div>
 
                   {/* Video Section */}
-                  <div className="c-testimonials__video">
+                  <div className="c-testimonials__video fadeInUp">
                     <video
                       ref={(el) => {
                         videoRefs.current[index] = el;
@@ -118,7 +118,7 @@ export const TestimonialsCarousel = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="c-testimonials__buttons">
+          <div className="c-testimonials__buttons fadeInUp">
             <CarouselPrevious className="c-testimonials__prev-btn">
               <img src={arrowLeft} alt="Prev" />
             </CarouselPrevious>

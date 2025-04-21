@@ -141,7 +141,7 @@ export default function Home() {
         <div className="c-grid-video">
           <div className="c-grid-video__col col-span-2">
             <div
-              className="c-grid-video__box max-h-[1070px]"
+              className="c-grid-video__box max-h-[1070px] fadeInUp"
               onMouseEnter={(e) => {
                 const video = e.currentTarget.querySelector(
                   "video"
@@ -175,7 +175,7 @@ export default function Home() {
 
           <div className="c-grid-video__col">
             <div
-              className="c-grid-video__box max-h-[519px]"
+              className="c-grid-video__box max-h-[519px] fadeInUp"
               onMouseEnter={(e) => {
                 const video = e.currentTarget.querySelector(
                   "video"
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
 
             <div
-              className="c-grid-video__box max-h-[519px]"
+              className="c-grid-video__box max-h-[519px] fadeInUp"
               onMouseEnter={(e) => {
                 const video = e.currentTarget.querySelector(
                   "video"
@@ -243,13 +243,15 @@ export default function Home() {
 
       <section id="clients-logo" className="o-section o-section--clients-logo">
         <div className="c-clients-logo">
-          <h2 className="c-clients-logo__title">
+          <h2 className="c-clients-logo__title fadeInUp">
             <strong>Over 100+</strong> companies trust us
           </h2>
 
-          <Suspense fallback={<div className="flex-center">Loading...</div>}>
-            <ClientsLogo />
-          </Suspense>
+          <div className="fadeInUp">
+            <Suspense fallback={<div className="flex-center">Loading...</div>}>
+              <ClientsLogo />
+            </Suspense>
+          </div>
         </div>
       </section>
       {/* <--! End CLient Logo Section --> */}
@@ -258,8 +260,8 @@ export default function Home() {
         <div className="c-achievements">
           <div className="container mx-auto">
             <div className="c-achievements-header">
-              <h3 className="u-small-title">our achievements</h3>
-              <div className="u-title max-w-4xl">
+              <h3 className="u-small-title fadeInUp">our achievements</h3>
+              <div className="u-title max-w-4xl fadeInUp">
                 <h2>
                   Driving Impact, Scaling Businesses, and Delivering Excellence.
                 </h2>
@@ -282,7 +284,7 @@ export default function Home() {
                 <AchievementCounter />
               </div>
               <div className="c-achievements__col">
-                <div className="c-achievements__video">
+                <div className="c-achievements__video fadeInUp">
                   <video
                     autoPlay={true}
                     loop={true}
@@ -303,7 +305,7 @@ export default function Home() {
         id="headline-carousel"
         className="o-section o-section--headline-carousel"
       >
-        <div className="c-headline-carousel">
+        <div className="c-headline-carousel fadeInUp">
           <Suspense fallback={<div>Loading...</div>}>
             <HeadlineCaro />
           </Suspense>
@@ -315,8 +317,8 @@ export default function Home() {
         <div className="c-case-studies">
           <div className="container mx-auto">
             <div className="c-case-studies__header">
-              <h3 className="u-small-title">our Case Studies</h3>
-              <div className="u-title">
+              <h3 className="u-small-title fadeInUp">our Case Studies</h3>
+              <div className="u-title fadeInUp">
                 <h2>
                   Featured
                   <span className="flex items-start">
@@ -340,43 +342,41 @@ export default function Home() {
             <div className="c-case-study__wrap">
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
-                  <div className="c-case-study__video">
-                    <div
-                      className="c-case-study__video"
-                      onMouseEnter={(e) => {
-                        const video = e.currentTarget.querySelector(
-                          "video"
-                        ) as HTMLVideoElement;
-                        if (video) {
-                          //   video.currentTime = 0;
-                          video.play().catch((err) => {
-                            console.warn("Play error:", err);
-                          });
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        const video = e.currentTarget.querySelector(
-                          "video"
-                        ) as HTMLVideoElement;
-                        if (video) {
-                          video.pause();
-                          //   video.currentTime = 0;
-                        }
-                      }}
-                    >
-                      <video
-                        src="https://cuberto.com/assets/projects/riyadh/cover.mp4"
-                        muted
-                        playsInline
-                        preload="auto"
-                      ></video>
-                    </div>
+                  <div
+                    className="c-case-study__video fadeInUp"
+                    onMouseEnter={(e) => {
+                      const video = e.currentTarget.querySelector(
+                        "video"
+                      ) as HTMLVideoElement;
+                      if (video) {
+                        //   video.currentTime = 0;
+                        video.play().catch((err) => {
+                          console.warn("Play error:", err);
+                        });
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const video = e.currentTarget.querySelector(
+                        "video"
+                      ) as HTMLVideoElement;
+                      if (video) {
+                        video.pause();
+                        //   video.currentTime = 0;
+                      }
+                    }}
+                  >
+                    <video
+                      src="https://cuberto.com/assets/projects/riyadh/cover.mp4"
+                      muted
+                      playsInline
+                      preload="auto"
+                    ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
@@ -384,7 +384,7 @@ export default function Home() {
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
                   <div
-                    className="c-case-study__video"
+                    className="c-case-study__video fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -414,10 +414,10 @@ export default function Home() {
                     ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
@@ -427,7 +427,7 @@ export default function Home() {
               <div className="c-case-study__col ">
                 <div className="c-case-study__box">
                   <div
-                    className="c-case-study__video"
+                    className="c-case-study__video fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -457,10 +457,10 @@ export default function Home() {
                     ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
@@ -468,7 +468,7 @@ export default function Home() {
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
                   <div
-                    className="c-case-study__video"
+                    className="c-case-study__video fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -498,10 +498,10 @@ export default function Home() {
                     ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
@@ -511,7 +511,7 @@ export default function Home() {
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
                   <div
-                    className="c-case-study__video"
+                    className="c-case-study__video fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -541,10 +541,10 @@ export default function Home() {
                     ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
@@ -552,7 +552,7 @@ export default function Home() {
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
                   <div
-                    className="c-case-study__video"
+                    className="c-case-study__video fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -582,17 +582,17 @@ export default function Home() {
                     ></video>
                   </div>
                   <div className="c-case-study__caption">
-                    <h3>
+                    <h3 className="fadeInUp">
                       <strong>Clypt</strong> - AI Crypto trading
                     </h3>
-                    <p>Web Application</p>
+                    <p className="fadeInUp">Web Application</p>
                   </div>
                 </div>
               </div>
             </div>
             {/* /-- Video Row -- */}
 
-            <div className="text-center">
+            <div className="text-center fadeInUp">
               <Link to="/" className="c-case-study__button">
                 <span>View all cases</span>
               </Link>
@@ -609,8 +609,8 @@ export default function Home() {
         <div className="c-expertise-area">
           <div className="container mx-auto">
             <div className="c-expertise-area__header">
-              <h3 className="u-small-title">Our expertise areas</h3>
-              <h2 className="u-title">
+              <h3 className="u-small-title fadeInUp">Our expertise areas</h3>
+              <h2 className="u-title fadeInUp">
                 Tailored Software, Built by Experts to Drive 10x Growth.
               </h2>
             </div>
@@ -621,7 +621,7 @@ export default function Home() {
                 <AccordionItem
                   key={index}
                   value={`item-${index + 1}`}
-                  className="c-accordion__item"
+                  className="c-accordion__item fadeInUp"
                 >
                   <AccordionTrigger className="c-accordion__title">
                     <span>{(index + 1).toString().padStart(2, "0")}</span>
@@ -657,7 +657,7 @@ export default function Home() {
         id="headline-carousel2"
         className="o-section o-section--headline-carousel2"
       >
-        <div className="c-headline-carousel c-headline-carousel--2">
+        <div className="c-headline-carousel c-headline-carousel--2 fadeInUp">
           <Suspense fallback={<div className="flex-center">Loading...</div>}>
             <HeadlineCaro />
           </Suspense>
@@ -669,8 +669,10 @@ export default function Home() {
         <div className="c-testimonials">
           <div className="container mx-auto">
             <div className="c-testimonials__header">
-              <h3 className="u-small-title">our Clients love about us</h3>
-              <h2 className="u-title">
+              <h3 className="u-small-title fadeInUp">
+                our Clients love about us
+              </h3>
+              <h2 className="u-title fadeInUp">
                 Stories of Success: Hear From Our Clients.
               </h2>
             </div>
@@ -688,7 +690,7 @@ export default function Home() {
         <div className="c-our-story">
           <div className="container mx-auto">
             <div className="c-headline-carousel__wrap">
-              <div className="c-our-story__header">
+              <div className="c-our-story__header fadeInUp">
                 <Suspense fallback={<div>Loading...</div>}>
                   <HeadlineCaro2 />
                 </Suspense>
@@ -698,26 +700,26 @@ export default function Home() {
 
             <div className="c-our-story__wrap">
               <div className="c-our-story__col">
-                <div className="c-our-story__img">
+                <div className="c-our-story__img fadeInUp">
                   <img src={storyImg1} alt="Story Img 1" />
                 </div>
-                <div className="c-our-story__text">
+                <div className="c-our-story__text fadeInUp">
                   <h4>The Future of Digital Design: Trends to Watch in 2024</h4>
                 </div>
               </div>
               <div className="c-our-story__col">
-                <div className="c-our-story__img">
+                <div className="c-our-story__img fadeInUp">
                   <img src={storyImg2} alt="Story Img 2" />
                 </div>
-                <div className="c-our-story__text">
+                <div className="c-our-story__text fadeInUp">
                   <h4>Our Story: A Journey of Innovation and Growth.</h4>
                 </div>
               </div>
               <div className="c-our-story__col">
-                <div className="c-our-story__img">
+                <div className="c-our-story__img fadeInUp">
                   <img src={storyImg3} alt="Story Img 3" />
                 </div>
-                <div className="c-our-story__text">
+                <div className="c-our-story__text fadeInUp">
                   <h4>The Future of Digital Design: Trends to Watch in 2024</h4>
                 </div>
               </div>
@@ -732,13 +734,15 @@ export default function Home() {
           <div className="container mx-auto">
             <div className="c-cta__wrap">
               <div className="c-cta__text">
-                <h2 className="c-cta__title">Let’s Chat</h2>
-                <p>
-                  Connect with us to launch high-impact software solutions
-                  quickly and efficiently.
-                </p>
+                <h2 className="c-cta__title fadeInUp">Let’s Chat</h2>
+                <div className="fadeInUp">
+                  <p>
+                    Connect with us to launch high-impact software solutions
+                    quickly and efficiently.
+                  </p>
+                </div>
               </div>
-              <Link to="#" className="c-cta__button"></Link>
+              <Link to="#" className="c-cta__button fadeInUp"></Link>
             </div>
           </div>
         </div>

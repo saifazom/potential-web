@@ -61,7 +61,7 @@ export const AchievementCounter = () => {
   return (
     <div className="c-achive-count" ref={sectionRef}>
       {counters.map((item, i) => (
-        <div className="c-achive-count__item" key={i}>
+        <div className="c-achive-count__item fadeInUp" key={i}>
           <strong>
             {counts[i]}
             {item.suffix ?? ""}
