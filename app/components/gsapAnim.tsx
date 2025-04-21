@@ -29,22 +29,3 @@ const PageWithAnimations = () => {
 };
 
 export default PageWithAnimations;
-// ===
-export const AnimatedWave: React.FC = () => {
-  const waveRef = useRef<HTMLImageElement | null>(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      waveRef.current,
-      { x: "-100%" },
-      {
-        x: "100%",
-        duration: 10,
-        repeat: -1,
-        ease: "linear",
-      }
-    );
-  }, []);
-
-  return <i ref={waveRef}></i>;
-};

@@ -4,6 +4,7 @@
 @theme {
   /* Text & BG Colors */
   --color-themeViolet: #624dff;
+  --color-themeViolet-50: #624dffce;
   --color-themeDarkBlue: #0d083a;
   --color-themeLightGray: #e9ecfb;
   --color-themeLemYellow: #ebfe5b;
@@ -303,7 +304,7 @@ nav ul li a {
   @apply flex-1/3;
 }
 .c-case-study__box {
-  @apply h-full;
+  @apply h-full overflow-hidden;
 }
 .c-case-study__video {
   @apply h-[775px] w-full relative rounded-4xl overflow-hidden;

@@ -6,7 +6,8 @@ const HeadlineCaro2 = lazy(() => import("~/components/HeadlineCarousel2"));
 const ClientsLogo = lazy(() => import("~/components/clientsLogoMarquee"));
 import { TestimonialsCarousel } from "~/components/TestimonialsCarousel";
 import { AchievementCounter } from "~/components/AchievementCounter";
-import PageWithAnimations, { AnimatedWave } from "~/components/gsapAnim";
+import PageWithAnimations from "~/components/gsapAnim";
+import CircleCursor from "~/components/cursorForBox";
 import {
   clientImg1,
   clientImg2,
@@ -342,8 +343,9 @@ export default function Home() {
             <div className="c-case-study__wrap">
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -383,8 +385,9 @@ export default function Home() {
 
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -426,8 +429,9 @@ export default function Home() {
             <div className="c-case-study__wrap">
               <div className="c-case-study__col ">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -467,8 +471,9 @@ export default function Home() {
 
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -510,8 +515,9 @@ export default function Home() {
             <div className="c-case-study__wrap">
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
@@ -551,8 +557,9 @@ export default function Home() {
 
               <div className="c-case-study__col">
                 <div className="c-case-study__box">
+                  <CircleCursor />
                   <div
-                    className="c-case-study__video fadeInUp"
+                    className="c-case-study__video cursor-box fadeInUp"
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector(
                         "video"
