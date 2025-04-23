@@ -25,7 +25,7 @@ const PageWithAnimations = () => {
     });
   }, []);
 
-  return <div className="fadeInUp"></div>;
+  return <div className="fadeInUp hidden"></div>;
 };
 
 export default PageWithAnimations;

@@ -1,6 +1,3 @@
-// import useEmblaCarousel from "embla-carousel-react";
-// import AutoScroll from "embla-carousel-auto-scroll";
-
 import Marquee from "react-fast-marquee";
 import {
   clientLogo,
@@ -11,24 +8,6 @@ import {
   clientLogo6,
   clientLogo7,
 } from "~/utils/ImageComponent";
-
-// type Props = {
-//   clientLogos: string[];
-// };
-
-// const ClientsLogo: React.FC<Props> = ({ clientLogos }) => {
-//   return (
-//     <Marquee speed={0} pauseOnHover gradient={false}>
-//       {clientLogos.map((logo, index) => (
-//         <div key={index} className="c-clients-logo__item">
-//           <img src={logo} alt={`Client logo ${index}`} />
-//         </div>
-//       ))}
-//     </Marquee>
-//   );
-// };
-
-// export default ClientsLogo;
 
 export default function ClientsLogo() {
   return (

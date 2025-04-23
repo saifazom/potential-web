@@ -61,9 +61,7 @@ const accordionData = [
 export default function Home() {
   return (
     <>
-      <div className="hidden">
-        <PageWithAnimations />
-      </div>
+      <PageWithAnimations />
 
       <section id="hero" className="o-section o-section--hero">
         <div className="c-hero">
@@ -257,7 +255,7 @@ export default function Home() {
       </section>
       {/* <--! End CLient Logo Section --> */}
 
-      <section id="achievements" className="o-section o-section--achievements">
+      <section id="achievements" className="o-section o-section--achievements ">
         <div className="c-achievements">
           <div className="container mx-auto">
             <div className="c-achievements-header">

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import siteLogo from "~/assets/img/site-logo.svg";
+import siteLogo from "../../assets/img/site-logo.svg";
 
 export default function Header() {
   return (
