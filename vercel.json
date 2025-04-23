@@ -1,0 +1,10 @@
+{
+    "buildCommand": "tsc && vite build",
+    "devCommand": "vite",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ]
+}
