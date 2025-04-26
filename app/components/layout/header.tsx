@@ -2,6 +2,79 @@ import { Link } from "react-router";
 import siteLogo from "../../assets/img/site-logo.svg";
 
 export default function Header() {
+  const menuData = [
+    {
+      label: "Services",
+      to: "/services",
+      submenu: [
+        [
+          { label: "E-commerce", to: "/e-commerce", number: "01" },
+          { label: "Healthcare", to: "/healthcare", number: "02" },
+          { label: "Education", to: "/education", number: "03" },
+          { label: "Software", to: "/software", number: "04" },
+          { label: "Real Estate", to: "/real-estate", number: "05" },
+          {
+            label: "Logistics & Fulfilment",
+            to: "/logistics-&-fulfilment",
+            number: "06",
+          },
+        ],
+        [
+          {
+            label: "Transport & Travel",
+            to: "/transport-&-travel",
+            number: "07",
+          },
+          { label: "Startup", to: "/startup", number: "08" },
+          { label: "Automotive", to: "/automotive", number: "09" },
+          { label: "Services", to: "/services", number: "10" },
+          {
+            label: "Printing Services",
+            to: "/printing-services",
+            number: "11",
+          },
+          { label: "E-commerce", to: "/e-commerce", number: "12" },
+        ],
+      ],
+    },
+    {
+      label: "About Us",
+      to: "/about",
+      submenu: [
+        [
+          { label: "E-commerce", to: "/e-commerce", number: "01" },
+          { label: "Healthcare", to: "/healthcare", number: "02" },
+          { label: "Education", to: "/education", number: "03" },
+          { label: "Software", to: "/software", number: "04" },
+          { label: "Real Estate", to: "/real-estate", number: "05" },
+          {
+            label: "Logistics & Fulfilment",
+            to: "/logistics-&-fulfilment",
+            number: "06",
+          },
+        ],
+        [
+          {
+            label: "Transport & Travel",
+            to: "/transport-&-travel",
+            number: "07",
+          },
+          { label: "Startup", to: "/startup", number: "08" },
+          { label: "Automotive", to: "/automotive", number: "09" },
+          { label: "Services", to: "/services", number: "10" },
+          {
+            label: "Printing Services",
+            to: "/printing-services",
+            number: "11",
+          },
+          { label: "E-commerce", to: "/e-commerce", number: "12" },
+        ],
+      ],
+    },
+    { label: "Portfolio", to: "/portfolio" },
+    { label: "Career", to: "/career" },
+    { label: "Blog", to: "/blog" },
+  ];
   return (
     <header id="header" className="o-section o-section--header">
       <div className="container mx-auto relative py-6 mt-4 ">
@@ -9,161 +82,31 @@ export default function Header() {
           <Link to="/">
             <img src={siteLogo} alt="Site Logo" />
           </Link>
-
           <nav className="max-lg:hidden">
             <ul>
-              <li>
-                <Link to="/services">Services</Link>
-
-                <div className="u-dropdown">
-                  <ul>
-                    <li>
-                      <Link to="/e-commerce">
-                        <span>01</span> E-commerce
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/healthcare">
-                        <span>02</span> Healthcare
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/education">
-                        <span>03</span> Education
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/software">
-                        <span>04</span> Software
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/real-estate">
-                        <span>05</span> Real Estate
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/logistics-&-fulfilment">
-                        <span>06</span> Logistics & Fulfilment
-                      </Link>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <Link to="/transport-&-travel">
-                        <span>07</span> Transport & Travel
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/startup">
-                        <span>08</span> Startup
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/automotive">
-                        <span>09</span> Automotive
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/services">
-                        <span>10</span> Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/printing-services">
-                        <span>11</span> Printing Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/e-commerce">
-                        <span>12</span> E-commerce
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link to="/about-us">About Us</Link>
-
-                <div className="u-dropdown">
-                  <ul>
-                    <li>
-                      <Link to="/e-commerce">
-                        <span>01</span> E-commerce
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/healthcare">
-                        <span>02</span> Healthcare
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/education">
-                        <span>03</span> Education
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/software">
-                        <span>04</span> Software
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/real-estate">
-                        <span>05</span> Real Estate
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/logistics-&-fulfilment">
-                        <span>06</span> Logistics & Fulfilment
-                      </Link>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <Link to="/transport-&-travel">
-                        <span>07</span> Transport & Travel
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/startup">
-                        <span>08</span> Startup
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/automotive">
-                        <span>09</span> Automotive
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/services">
-                        <span>10</span> Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/printing-services">
-                        <span>11</span> Printing Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/e-commerce">
-                        <span>12</span> E-commerce
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/career">Career</Link>
-              </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
+              {menuData.map(({ label, to, submenu }) => (
+                // const { label, to, submenu } = item;
+                <li key={label}>
+                  <Link to={to}>{label}</Link>
+                  {submenu && (
+                    <div className="u-dropdown">
+                      {submenu.map((submenuCol, colIdx) => (
+                        <ul key={colIdx}>
+                          {submenuCol.map((sub, subIdx) => (
+                            <li key={sub.label}>
+                              <Link to={sub.to}>
+                                <span>{sub.number}</span> {sub.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
-
           <button className="u-button--violate">Let's Talk</button>
         </div>
       </div>

@@ -420,7 +420,7 @@ nav ul li a {
 
 /*? -==- Headline Carousel Section2 -==- */
 .o-section--headline-carousel2 {
-  @apply bg-themeLemYellow;
+  @apply bg-themeLemYellow px-0;
 }
 .c-headline-carousel--2 .c-headline-carousel__item {
   @apply text-black;
