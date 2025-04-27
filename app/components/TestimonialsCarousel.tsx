@@ -1,6 +1,4 @@
-// "use client";
-
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
