@@ -1,10 +1,11 @@
-import axios from 'axios';
-import type { AxiosError } from 'axios';
-import type { ApiErrorResponse, ErrorResponse } from '~/types/httpService';
+import axios from "axios";
+import type { AxiosError } from "axios";
 
-export const createErrorResponse = (error: AxiosError<ApiErrorResponse>): ErrorResponse => {
-  const errorResponse: ErrorResponse = {
-    message: 'An unexpected error occurred',
+export const createErrorResponse = (
+  error: AxiosError<any>
+): { message: string; status: number } => {
+  const errorResponse = {
+    message: "An unexpected error occurred",
     status: 500,
   };
 
@@ -17,20 +18,20 @@ export const createErrorResponse = (error: AxiosError<ApiErrorResponse>): ErrorR
         handleUnauthorized();
         break;
       case 403:
-        errorResponse.message = 'Access denied';
+        errorResponse.message = "Access denied";
         break;
       case 404:
-        errorResponse.message = 'Resource not found';
+        errorResponse.message = "Resource not found";
         break;
       case 422:
-        errorResponse.message = 'Validation failed';
+        errorResponse.message = "Validation failed";
         break;
       case 500:
-        errorResponse.message = 'Server error';
+        errorResponse.message = "Server error";
         break;
     }
   } else if (error.request) {
-    errorResponse.message = 'No response from server';
+    errorResponse.message = "No response from server";
     errorResponse.status = 503;
   }
 
@@ -38,19 +39,23 @@ export const createErrorResponse = (error: AxiosError<ApiErrorResponse>): ErrorR
 };
 
 export const handleUnauthorized = (): void => {
-  localStorage.removeItem('token');
-  window.location.href = '/login';
+  localStorage.removeItem("token");
+  window.location.href = "/login";
 };
 
-export const handleAxiosError = (error: unknown): ErrorResponse => {
+export const handleAxiosError = (
+  error: unknown
+): { message: string; status: number } => {
   if (axios.isAxiosError(error)) {
-    return error.response?.data || {
-      message: error.message,
-      status: error.response?.status || 500,
-    };
+    return (
+      error.response?.data || {
+        message: error.message,
+        status: error.response?.status || 500,
+      }
+    );
   }
   return {
-    message: 'An unexpected error occurred',
+    message: "An unexpected error occurred",
     status: 500,
   };
 };
