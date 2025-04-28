@@ -1,10 +1,10 @@
 {
-    "buildCommand": "tsc && vite build",
-    "devCommand": "vite",
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ]
+  "buildCommand": "tsc && npm run build",
+  "devCommand": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
