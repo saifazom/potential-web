@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useActionState } from 'react';
+import { useEffect } from "react";
+import { useActionState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
@@ -33,7 +33,7 @@ export default function Login() {
       const errors = JSON.parse(state.error);
       Object.keys(errors).forEach((key) => {
         form.setError(key as keyof LoginFormData, {
-          message: errors[key]
+          message: errors[key],
         });
       });
     }
@@ -74,7 +74,11 @@ export default function Login() {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" placeholder="Enter your password" {...field} />
+                      <Input
+                        type="password"
+                        placeholder="Enter your password"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -83,7 +87,7 @@ export default function Login() {
               <Button type="submit" className="w-full">
                 Sign in
               </Button>
-              
+
               {/* {state?.error && (
                 <p className="text-sm text-destructive">{state.error}</p>
               )} */}

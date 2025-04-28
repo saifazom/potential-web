@@ -74,6 +74,7 @@ export default function Header() {
     { label: "Portfolio", to: "/portfolio" },
     { label: "Career", to: "/career" },
     { label: "Blog", to: "/blog" },
+    { label: "User", to: "/user" },
   ];
   return (
     <header id="header" className="o-section o-section--header">

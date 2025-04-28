@@ -7,4 +7,5 @@ export const publicRoutes = [
   route("portfolio", "pages/public/portfolio.tsx"),
   route("career", "pages/public/career.tsx"),
   route("blog", "pages/public/blog.tsx"),
+  route("user", "pages/public/user.tsx"),
 ];
