@@ -1,5 +1,6 @@
 {
   "buildCommand": "tsc && npm run build",
+  "outputDirectory": "build/client",
   "devCommand": "vite",
   "rewrites": [
     {
