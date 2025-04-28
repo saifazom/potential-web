@@ -1,7 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-const headlineTexts2 = ["together", "let's build", " "];
 export default function HeadlineCaro2() {
   return (
     <Marquee speed={60} pauseOnHover gradient={false}>
