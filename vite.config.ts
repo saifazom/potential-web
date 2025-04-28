@@ -9,6 +9,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "./app"),
+      'gsap': path.resolve(__dirname, 'node_modules/gsap'),
+      'gsap/ScrollTrigger': path.resolve(__dirname, 'node_modules/gsap/ScrollTrigger')
     },
   },
+  optimizeDeps: {
+    include: ['gsap', 'gsap/ScrollTrigger']
+  },
+  ssr: {
+    noExternal: ['gsap']
+  }
 });
