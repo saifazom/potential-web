@@ -1,8 +1,7 @@
 import axios from "axios";
-import type { AxiosError } from "axios";
 
 export const createErrorResponse = (
-  error: AxiosError<any>
+  error: any
 ): { message: string; status: number } => {
   const errorResponse = {
     message: "An unexpected error occurred",
@@ -46,14 +45,6 @@ export const handleUnauthorized = (): void => {
 export const handleAxiosError = (
   error: unknown
 ): { message: string; status: number } => {
-  if (axios.isAxiosError(error)) {
-    return (
-      error.response?.data || {
-        message: error.message,
-        status: error.response?.status || 500,
-      }
-    );
-  }
   return {
     message: "An unexpected error occurred",
     status: 500,
