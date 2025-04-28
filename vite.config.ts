@@ -1,4 +1,4 @@
-import path from "path"
+import path from "path";
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
@@ -10,5 +10,8 @@ export default defineConfig({
     alias: {
       "~": path.resolve(__dirname, "./app"),
     },
+  },
+  build: {
+    outDir: "build",
   },
 });
