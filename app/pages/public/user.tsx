@@ -10,7 +10,13 @@ const User = () => {
     email: "",
     address: { city: "" },
   });
-
+  const [editingUser, setEditingUser] = useState<null | {
+    id: string;
+    name: string;
+    email: string;
+    address: { city: string };
+  }>(null);
+  const [successMessage, setSuccessMessage] = useState("");
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -56,6 +62,18 @@ const User = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (editingUser) {
+      try {
+        await updateUser(editingUser.id, formData);
+        setEditingUser(null);
+        setFormData({ name: "", email: "", address: { city: "" } });
+        setSuccessMessage("User updated successfully");
+        setTimeout(() => setSuccessMessage(""), 2000);
+      } catch (error) {
+        console.error("Error updating user", error);
+      }
+      return;
+    }
     const maxRetries = 3;
     let attempt = 0;
     const delay = (ms: number) =>
@@ -72,6 +90,9 @@ const User = () => {
         );
         setUsers([...users, response.data]);
         fetchUsers();
+        setFormData({ name: "", email: "", address: { city: "" } });
+        setSuccessMessage("New User Added sucsesfully");
+        setTimeout(() => setSuccessMessage(""), 2000);
         break;
       } catch (error: any) {
         if (error.response && error.response.status === 429) {
@@ -108,6 +129,8 @@ const User = () => {
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
       fetchUsers();
+      setSuccessMessage("User deleted successfully");
+      setTimeout(() => setSuccessMessage(""), 2000);
       console.log("User deleted successfully", id);
     } catch (error) {
       console.error("Error deleting user", error);
@@ -150,8 +173,13 @@ const User = () => {
               className="u-button--violate w-full text-center justify-center rounded-none"
               type="submit"
             >
-              Submit
+              {editingUser ? "Update" : "Submit"}
             </button>
+            {successMessage && (
+              <div className="text-green-600 text-center mt-2">
+                {successMessage}
+              </div>
+            )}
           </form>
         </div>
 
@@ -171,13 +199,14 @@ const User = () => {
                   <div className="flex-center">
                     <button
                       className="bg-green-500 px-5 py-2 text-white rounded-full"
-                      onClick={() =>
-                        updateUser(user.id, {
-                          name: "Updated Name",
-                          email: "updated@example.com",
-                          address: { city: "Roscoeview" },
-                        })
-                      }
+                      onClick={() => {
+                        setEditingUser(user);
+                        setFormData({
+                          name: user.name,
+                          email: user.email,
+                          address: { city: user.address.city },
+                        });
+                      }}
                     >
                       Update
                     </button>
