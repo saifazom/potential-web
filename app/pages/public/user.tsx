@@ -67,7 +67,7 @@ const User = () => {
         await updateUser(editingUser.id, formData);
         setEditingUser(null);
         setFormData({ name: "", email: "", address: { city: "" } });
-        setSuccessMessage("User updated successfully");
+        setSuccessMessage(`ID: ${editingUser.id} User updated successfully`);
         setTimeout(() => setSuccessMessage(""), 2000);
       } catch (error) {
         console.error("Error updating user", error);
@@ -91,7 +91,7 @@ const User = () => {
         setUsers([...users, response.data]);
         fetchUsers();
         setFormData({ name: "", email: "", address: { city: "" } });
-        setSuccessMessage("New User Added sucsesfully");
+        setSuccessMessage(`ID: ${response.data.id} User Added successfully`);
         setTimeout(() => setSuccessMessage(""), 2000);
         break;
       } catch (error: any) {
@@ -129,7 +129,7 @@ const User = () => {
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
       fetchUsers();
-      setSuccessMessage("User deleted successfully");
+      setSuccessMessage(`ID: ${id} User deleted successfully`);
       setTimeout(() => setSuccessMessage(""), 2000);
       console.log("User deleted successfully", id);
     } catch (error) {
