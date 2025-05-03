@@ -23,41 +23,31 @@ export function meta({}: Route.MetaArgs) {
     },
   ];
 }
+
 export default function Home() {
   return (
     <>
       <PageWithAnimations />
-
       <SectionHero />
       {/* <--! End Hero Section --> */}
-
       <SectionGridVideo />
       {/* <--! End Video Grid Section --> */}
-
       <SectionClientsLogo />
       {/* <--! End CLient Logo Section --> */}
-
       <SectionAchievements />
       {/* <--! End Our Achievements Section --> */}
-
       <SectionHeadlineCarousel />
       {/* <--! End Headline Slider Section --> */}
-
       <SectionCaseStudies />
       {/* <--! End Case Studies Section --> */}
-
       <SectionExpertise />
       {/* <--! End Expertise Area Section --> */}
-
       <SectionHeadlineCarousel2 />
       {/* <--! End Headline Carosel Section2 --> */}
-
       <SectionTestimonials />
       {/* <--! End Testimonials Section --> */}
-
       <SectionOurStory />
       {/* <--! End Our Story Section --> */}
-
       <SectionCTA />
       {/* <--! End CTA Section --> */}
     </>
